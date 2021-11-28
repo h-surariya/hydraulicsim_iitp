@@ -7,6 +7,7 @@ import 'package:hydraulicsim_iitp/roundedbuttonsmall.dart';
 import 'package:hydraulicsim_iitp/models/attributepasssc1.dart';
 import 'SimulationScreen_test1.dart';
 import 'package:hydraulicsim_iitp/componentes/reusable_card.dart';
+import 'dynamic_page.dart';
 
 class Attribute extends StatefulWidget {
   static String id = 'Attribute_Screen';
@@ -33,6 +34,15 @@ class _AttributeState extends State<Attribute> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF0A0E21),
+      appBar: AppBar(
+        title: Text('HYDRAULIC SIMULATOR',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF8D8E98),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -40,6 +50,34 @@ class _AttributeState extends State<Attribute> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  "Hydraulics",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text("Hydraulics is confined liquids under pressure made to do work or Science of transmitting force motion through a medium of confined liquid. By hydraulics, we mean the generation of forces and motion using hydraulic fluids. The hydraulic fluids represent the medium for power transmission. The objective of this project is to learn all the types of hydraulics and its applications in main areas and eventually to design an app or a webpage to perform its simulation of different circuits (similar to any lab requiring a hydraulic) and to determine the output. The applications of these can be very vast as the places which require particular hydraulics circuits can test all possible conditions virtually instead of doing the same physically and also have an upper hand in terms of economical evaluation.\n\nKEYWORDS: Single Acting Cylinders, Double Acting Cylinders, Pump, Motor, Flow ControlValves, Direction Control Valves, Pressure Relief Valves, Hydraulic Circuits",
+                    style: TextStyle(
+                      color: Colors.blueGrey[200],
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Text(
+                  "Component Details",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Image(image:AssetImage('ImageAssets/circuit.jpg'),),
+                ),
                 ReusableCard(
                   cardChild: ExpansionCard(
                     title: Container(
@@ -73,10 +111,9 @@ class _AttributeState extends State<Attribute> {
                           labelText: 'RPM Value',
                           prefixIcon: Icon(
                             Icons.rotate_left,
-                            color: Colors.blue,
                           ),
                           labelStyle: TextStyle(
-                            color: Colors.blue,
+                            color: Colors.blueGrey[200],
                             fontWeight: FontWeight.w600,
                             fontSize: 17,
                           ),
@@ -96,10 +133,9 @@ class _AttributeState extends State<Attribute> {
                               left: 15, bottom: 11, top: 11, right: 15),
                           prefixIcon: Icon(
                             Icons.power,
-                            color: Colors.blue,
                           ),
                           labelStyle: TextStyle(
-                            color: Colors.blue,
+                            color: Colors.blueGrey[200],
                             fontWeight: FontWeight.w600,
                             fontSize: 17,
                           ),
@@ -119,10 +155,9 @@ class _AttributeState extends State<Attribute> {
                               left: 15, bottom: 11, top: 11, right: 15),
                           prefixIcon: Icon(
                             Icons.waves,
-                            color: Colors.blue,
                           ),
                           labelStyle: TextStyle(
-                            color: Colors.blue,
+                            color: Colors.blueGrey[200],
                             fontWeight: FontWeight.w600,
                             fontSize: 17,
                           ),
@@ -133,296 +168,316 @@ class _AttributeState extends State<Attribute> {
                   onPress: () {},
                 ),
                 ReusableCard(
-                  cardChild: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Piston Cylinder Specs",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
-                          ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Bore dia
-                            Boredia = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Bore Diameter (cm)',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon: Icon(
-                              Icons.radio_button_off_outlined,
+                  cardChild: ExpansionCard(
+                    title: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Piston Cylinder Specs",
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
                               color: Colors.blue,
-                            ),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
                             ),
                           ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Bore dia
-                            piston_rod_dia = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Rod Diameter (cm)',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon: Icon(
-                              Icons.radio_button_off_outlined,
-                              color: Colors.blue,
-                            ),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
+                          Text(
+                            "",
                           ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the stroke
-                            stroke = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Stroke (cm)',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon:
-                                Icon(Icons.height_sharp, color: Colors.blue),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
+                    children: <Widget>[
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Bore dia
+                          Boredia = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Bore Diameter (cm)',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon: Icon(
+                            Icons.radio_button_off_outlined,
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Bore dia
+                          piston_rod_dia = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Rod Diameter (cm)',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon: Icon(
+                            Icons.radio_button_off_outlined,
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the stroke
+                          stroke = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Stroke (cm)',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon:
+                              Icon(Icons.height_sharp),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   onPress: () {},
                 ),
                 ReusableCard(
-                  cardChild: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Relief Valve Specs",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
-                          ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            pressure = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Pressure Set',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon:
-                                Icon(Icons.stairs_rounded, color: Colors.blue),
-                            labelStyle: TextStyle(
+                  cardChild: ExpansionCard(
+                    title: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Relief Valve Specs",
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
                               color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
                             ),
                           ),
-                        ),
-                      ],
+                          Text(
+                            "",
+                          ),
+                        ],
+                      ),
                     ),
+                    children: <Widget>[
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          pressure = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Pressure Set',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon:
+                          Icon(Icons.stairs_rounded),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   onPress: () {},
                 ),
                 ReusableCard(
-                  cardChild: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Piston & Fluid Specs",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
-                          ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            springconstant = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Spring Constant(Optional)',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon:
-                                Icon(Icons.wrap_text_sharp, color: Colors.blue),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            piston_mass = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Mass of Piston',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon:
-                                Icon(Icons.line_weight, color: Colors.blue),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            fluid_viscosity = double.parse(value) * 10;
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Viscosity',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon: Icon(
-                              Icons.add_road_outlined,
+                  cardChild: ExpansionCard(
+                    title: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Piston & Fluid Specs",
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
                               color: Colors.blue,
                             ),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
                           ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            fluid_density = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Density',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon: Icon(Icons.add_road_outlined,
-                                color: Colors.blue),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
+                          Text(
+                            "",
                           ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            pipe_length = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Total Pipe Length (m)',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon: Icon(Icons.add_road_outlined,
-                                color: Colors.blue),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            pipe_dia = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Pipe Diameter (cm)',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon: Icon(Icons.add_road_outlined,
-                                color: Colors.blue),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white60),
-                          textAlign: TextAlign.start,
-                          onChanged: (value) {
-                            //get the Pressure Set
-                            pipe_roughness = double.parse(value);
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Pipe Roughness',
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            prefixIcon: Icon(Icons.add_road_outlined,
-                                color: Colors.blue),
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
+                    children: <Widget>[
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          springconstant = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Spring Constant(Optional)',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon:
+                          Icon(Icons.wrap_text_sharp),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          piston_mass = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Mass of Piston',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon:
+                          Icon(Icons.line_weight),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          fluid_viscosity = double.parse(value) * 10;
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Viscosity',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon: Icon(
+                            Icons.add_road_outlined,
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          fluid_density = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Density',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon: Icon(Icons.add_road_outlined,),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          pipe_length = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Total Pipe Length (m)',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon: Icon(Icons.add_road_outlined,),
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          pipe_dia = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Pipe Diameter (cm)',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon: Icon(Icons.add_road_outlined,),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.white60),
+                        textAlign: TextAlign.start,
+                        onChanged: (value) {
+//get the Pressure Set
+                          pipe_roughness = double.parse(value);
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Pipe Roughness',
+                          contentPadding: EdgeInsets.only(
+                              left: 15, bottom: 11, top: 11, right: 15),
+                          prefixIcon: Icon(Icons.add_road_outlined,),
+                          labelStyle: TextStyle(
+                            color: Colors.blueGrey[200],
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   onPress: () {},
                 ),
+                RoundedButtonSmall(
+                  title: "dynamic Simulation",
+                  colour:  Colors.blue,
+                    onPressed: (){
+                    Navigator.pushNamed(context, Dynamic.id);
+
+                }),
                 RoundedButtonSmall(
                   title: "Simulate",
                   colour: Colors.blue,
@@ -498,5 +553,4 @@ class _AttributeState extends State<Attribute> {
     );
   }
 }
-
 
